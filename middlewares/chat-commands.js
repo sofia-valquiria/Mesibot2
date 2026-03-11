@@ -25,8 +25,6 @@ switch(msg.content){
     msg.reply({content: listFrases(msg)})
         default: break;
 }
-
-if (msg.content === 'ping'){
-}}
+}
 
 module.exports = respond
