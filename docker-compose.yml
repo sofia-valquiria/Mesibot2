@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  bot:
+    build: .
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - BOT_PREFIX=${BOT_PREFIX}
+    volumes:
+      - .:/app
+    restart: unless-stopped
