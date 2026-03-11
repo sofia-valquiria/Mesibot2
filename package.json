@@ -11,14 +11,14 @@
   "license": "ISC",
   "dependencies": {
     "@replit/database": "^2.0.2",
-    "discord.js": "^13.17.1",
+    "discord.js": "^14.0.0",
     "dotenv": "^16.0.3",
     "mathjs": "^11.3.2",
     "nodemon": "^3.1.14"
   },
   "engines": {
-    "node": "16.15.0",
-    "npm": "8.5.5"
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   },
   "repository": {
     "type": "git",

@@ -9,7 +9,6 @@ const Database = require("@replit/database");
 const db = new Database();
 require("dotenv").config();
 
-const GatewayIntentBits = GatewayIntentBits();
 const bot = new Client({
 	intents: [
 		GatewayIntentBits.Guilds,
