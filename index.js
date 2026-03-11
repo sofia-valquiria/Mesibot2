@@ -1,24 +1,30 @@
 require('dotenv').config(); // Loads variables from .env file
-const DISCORD = require('discord.js');
+const { Client, GatewayIntentBits } = require('discord.js');
 const TOKEN = process.env.BOT_TOKEN;
 const PREFIX = process.env.BOT_PREFIX || '!';
-const chatCommands = require('./middlewares/chat-commands')
-const welcome = require('./middlewares/welcome-message')
-const commands = require('./middlewares/commands')
-const Database = require("@replit/database")
-const db = new Database()
-require("dotenv").config()
-const bot = new DISCORD.Client({
+const chatCommands = require('./middlewares/chat-commands');
+const welcome = require('./middlewares/welcome-message');
+const commands = require('./middlewares/commands');
+const Database = require("@replit/database");
+const db = new Database();
+require("dotenv").config();
+
+const bot = new Client({
 	intents: [
-		"GuildMessages",
-		"MessageContent",
-		"GuildMembers",
-		"Guilds",
-		"DirectMessages",
-		"GuildMessageReactions",
-		"DirectMessageReactions"
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.MessageContent,
+		GatewayIntentBits.GuildMembers,
 	],
 });
+
+
+const { Client, IntentsBitField } = require('discord.js');
+
+
+
+
+
 
 bot.on('ready', ()=>{
     console.log('El bot está listo')
