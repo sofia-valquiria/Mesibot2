@@ -1,5 +1,5 @@
 require('dotenv').config(); // Loads variables from .env file
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client, Intents } = require('discord.js');
 const TOKEN = process.env.BOT_TOKEN;
 const PREFIX = process.env.BOT_PREFIX || '!';
 const chatCommands = require('./middlewares/chat-commands');
@@ -11,10 +11,10 @@ require("dotenv").config();
 
 const bot = new Client({
 	intents: [
-		GatewayIntentBits.Guilds,
-		GatewayIntentBits.GuildMessages,
-		GatewayIntentBits.MessageContent,
-		GatewayIntentBits.GuildMembers,
+		Intents.FLAGS.GUILDS,
+		Intents.FLAGS.GUILD_MESSAGES,
+		Intents.FLAGS.MESSAGE_CONTENT,
+		Intents.FLAGS.GUILD_MEMBERS,
 	],
 });
 
