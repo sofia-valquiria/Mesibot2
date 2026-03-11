@@ -18,14 +18,6 @@ const bot = new Client({
 	],
 });
 
-
-const { Client, IntentsBitField } = require('discord.js');
-
-
-
-
-
-
 bot.on('ready', ()=>{
     console.log('El bot está listo')
 })
