@@ -18,13 +18,25 @@ const bot = new Client({
 	],
 });
 
+
 bot.on('ready', ()=>{
     console.log('El bot está listo')
 })
 
 //Message responses
 
-bot.on('messageCreate', chatCommands)
+
+bot.on('messageCreate', function(message) {
+    if(message.content[0] === PREFIX) {
+         chatCommands(message);
+    }
+    });
+
+bot.on('messageCreate', function(message) {
+    if(message.content[0] === PREFIX) {
+         commands(message);
+    }
+    });
 
 //welcome message
 bot.on('guildMemberAdd', welcome)
@@ -32,11 +44,5 @@ bot.on('guildMemberAdd', welcome)
 //Comandos con prefijo
 
 
-
-bot.on('messageCreate', function(message) {
-    if(message.content[0] === PREFIX) {
-         commands(message);
-    }
-    });
 
 bot.login(TOKEN)
