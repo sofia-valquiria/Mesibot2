@@ -5,6 +5,7 @@ const PREFIX = process.env.BOT_PREFIX || '!';
 const chatCommands = require('./middlewares/chat-commands');
 const welcome = require('./middlewares/welcome-message');
 const commands = require('./middlewares/commands');
+const addFrase = require('./middlewares/addFrase');
 const Database = require('@replit/database');
 const { add } = require('mathjs');
 const listFrases = require('./middlewares/listFrases');

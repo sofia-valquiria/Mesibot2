@@ -1,28 +1,27 @@
 async function respond(msg){
 let randomFrase = require('./randomFrase')
-let listFrases = require('./listFrases')       
-switch(msg.content){
+let listFrases = require('./listFrases')
+// Extract just the command part (without prefix)
+let command = msg.content.substring(1, msg.content.indexOf(' ') > 0 ? msg.content.indexOf(' ') : msg.content.length).toLowerCase();
+       
+switch(command){
 
-    case 'ping': await message.channel.send({content: 'pong'});
+    case 'ping': await msg.channel.send({content: 'pong'});
     break;
 
-    case 'el regreso...': await message.channel.send({content: '...del rey B)'});
+    case 'el regreso...': await msg.channel.send({content: '...del rey B)'});
     break;
 
-    case 'dios': await message.channel.send({content: 'MÍO'});
+    case 'dios': await msg.channel.send({content: 'MÍO'});
     break;
 
-    case 'randomFrase': 
     case 'randomfrase':
     case 'random':
     case 'frase':
-    case 'randomfrase':
-    case 'randomFrase':
-    case 'RandomFrase':
-    await message.channel.send({content: randomFrase()})
+    await msg.channel.send({content: randomFrase()})
     break;
     case 'listfrases':
-    await message.channel.send({content: listFrases(message)})
+    await msg.channel.send({content: listFrases(msg)})
         default: break;
 }
 }
