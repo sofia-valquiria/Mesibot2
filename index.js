@@ -5,7 +5,7 @@ const PREFIX = process.env.BOT_PREFIX || '!';
 const chatCommands = require('./middlewares/chat-commands');
 const welcome = require('./middlewares/welcome-message');
 const commands = require('./middlewares/commands');
-const Database = require("@replit/database");
+const Database = require('@replit/database');
 const db = new Database();
 require("dotenv").config();
 
@@ -27,7 +27,7 @@ bot.on('ready', ()=>{
 bot.on('messageCreate', chatCommands)
 
 //welcome message
-bot.on("guildMemberAdd", welcome)
+bot.on('guildMemberAdd', welcome)
 
 //Comandos con prefijo
 
