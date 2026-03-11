@@ -1,15 +1,15 @@
-function respond(msg){
+async function respond(msg){
 let randomFrase = require('./randomFrase')
 let listFrases = require('./listFrases')       
 switch(msg.content){
 
-    case 'ping': msg.reply({content: 'pong'});
+    case 'ping': await message.channel.send({content: 'pong'});
     break;
 
-    case 'el regreso...': msg.reply({content: '...del rey B)'});
+    case 'el regreso...': await message.channel.send({content: '...del rey B)'});
     break;
 
-    case 'dios': msg.reply({content: 'MÍO'});
+    case 'dios': await message.channel.send({content: 'MÍO'});
     break;
 
     case 'randomFrase': 
@@ -19,10 +19,10 @@ switch(msg.content){
     case 'randomfrase':
     case 'randomFrase':
     case 'RandomFrase':
-    msg.reply({content: randomFrase()})
+    await message.channel.send({content: randomFrase()})
     break;
     case 'listfrases':
-    msg.reply({content: listFrases(msg)})
+    await message.channel.send({content: listFrases(message)})
         default: break;
 }
 }

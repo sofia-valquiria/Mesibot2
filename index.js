@@ -6,6 +6,8 @@ const chatCommands = require('./middlewares/chat-commands');
 const welcome = require('./middlewares/welcome-message');
 const commands = require('./middlewares/commands');
 const Database = require('@replit/database');
+const { add } = require('mathjs');
+const listFrases = require('./middlewares/listFrases');
 const db = new Database();
 require("dotenv").config();
 
@@ -25,24 +27,24 @@ bot.on('ready', ()=>{
 
 //Message responses
 
+bot.on('messageCreate', async (message) => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(PREFIX)) return;
 
-bot.on('messageCreate', function(message) {
-    if(message.content[0] === PREFIX) {
-         chatCommands(message);
-    }
-    });
+  const args = message.content.slice(PREFIX.length).trim().split(/\s+/);
+  const command = args.shift().toLowerCase();
 
-bot.on('messageCreate', function(message) {
-    if(message.content[0] === PREFIX) {
-         commands(message);
-    }
-    });
+  if (command !== '') {
+	commands(message);
+	chatCommands(message);
+	addFrase(message);
+	listFrases(message);
+  }
+});
+
 
 //welcome message
-bot.on('guildMemberAdd', welcome)
-
-//Comandos con prefijo
+bot.on('guildMemberAdd', welcome);
 
 
-
-bot.login(TOKEN)
+bot.login(TOKEN);
