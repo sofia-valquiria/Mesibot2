@@ -1,7 +1,7 @@
 require('dotenv').config(); // Loads variables from .env file
 const { Client, GatewayIntentBits } = require('discord.js');
 const TOKEN = process.env.BOT_TOKEN;
-const PREFIX = process.env.BOT_PREFIX || '!';
+const PREFIX = process.env.PREFIX;
 const addFrase = require('./middlewares/addFrase');
 const randomFrase = require('./middlewares/randomFrase');
 const listFrases = require('./middlewares/listFrases');
