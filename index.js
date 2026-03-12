@@ -35,6 +35,6 @@ bot.on('messageCreate', async (message) => {
 	}
 );
 // Welcome message
-bot.on('guildMemberAdd', welcome);
+//bot.on('guildMemberAdd', welcome);
 
 bot.login(TOKEN);
