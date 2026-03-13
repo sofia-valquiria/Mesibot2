@@ -11,3 +11,5 @@ Está literalmente atado con alambre. Lo parcheé lo justo y necesario para que 
 PEEEERO como fue escrito para la 13, por una Sofi muchísimo menos experimentada, es mejor empezar de cero con otro bot,
 en vez de perder el tiempo refactorizando éste. La próxima iteración la haré con PREVIO ESTUDIO de la documentación, 
 usando DiscordJS (v14/v15, la última del momento), y Typescript.
+
+btw, dato de color, ES TRIVIALMENTE FÁCIL ESPIAR A QUIEN SEA DONDE SEA CON EL PODER DE LOS BOTSSSSSS
